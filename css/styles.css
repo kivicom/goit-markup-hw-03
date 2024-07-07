@@ -13,21 +13,35 @@
     --dairy: #fcfcfc;
 }
 
+/* #region Base styles */
 body{
     font-family: "Roboto", sans-serif;
     font-size: 16px;
     color: var(--slate);
     background-color: var(--white);
 }
+p {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    margin: 0;
+}
 
 ul,
 ol {
     list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6{
-    font-weight: 700;
-}
+
 
 a {
     text-decoration: none;
@@ -42,6 +56,18 @@ button{
     border: none;
     line-height: 1.5;
     letter-spacing: 0.04em;
+}
+/* #endregion */
+
+/* #region Common */
+.container {
+    width: 1158px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+section {
+    padding:120px 0;
 }
 
 .item-title {
@@ -62,16 +88,28 @@ button{
     color: var(--iris);
     text-transform: uppercase;
 }
+/* #endregion */
 
-/* header */
-
+/* #region header */
+header .inner-container{
+    display: flex;
+}
+header .logo{
+    margin-right: 76px;
+    padding: 24px 0;
+}
 header .logo-accent {
     color: var(--navy-blue);
 }
-
+header .nav-menu, header .address-list{
+    display: flex;
+}
 header .nav-list {
     font-weight: 500;
     letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    gap: 40px;
 }
 
 header .nav-link{
@@ -85,23 +123,34 @@ header .nav-link:focus {
     color: var(--ocean);
 }
 
-.address {
+header .address {
     font-style: normal;
+    margin-left: auto;
 }
-.address .address-item .link{
+
+header .address .address-item .link{
     line-height: 1.5;
     letter-spacing: 0.02em;
+    padding: 24px 0;
+    display: block;
 }
 
-.address-item .link:hover,
-.address-item .link:focus{
+header .address-item .link:hover,
+header .address-item .link:focus{
     color: var(--ocean);
 }
+/* #endregion */
 
-/* Hero */
+/* #region Hero */
 .hero{
     background-color: var(--navy-blue);
     text-align: center;
+}
+.container-hero{
+    padding: 188px 0;
+}
+.hero .inner-container{
+    display: block;
 }
 .hero-title{
     font-size: 56px;
@@ -109,17 +158,39 @@ header .nav-link:focus {
     letter-spacing: 0.02em;
     text-align: center;
     color: var(--white);
+    max-width: 496px;
+    margin: 0 auto 48px;
 }
-
+button.btn.hero-btn {
+    border-radius: 4px;
+    padding: 16px 32px;
+}
 .hero-btn:hover, .hero-btn:focus{
     background-color: var(--ocean);
 }
+/* #endregion */
 
-/* about */
-
+/* #region about */
 .about .section-title {
     letter-spacing: 0.02em;
     color: var(--navy-blue);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.item-title {
+    margin-bottom: 8px;
 }
 
 .about .item .descr {
@@ -127,7 +198,12 @@ header .nav-link:focus {
     letter-spacing: 0.02em;
 }
 
-/* team */
+ul.about-list {
+    display: flex;
+}
+/* #endregion about */
+
+/* #region Team */
 .team{
     background-color: var(--cloud);
 }
@@ -138,9 +214,23 @@ header .nav-link:focus {
     letter-spacing: 0.02em;
     text-transform: capitalize;
     color: var(--navy-blue);
+    margin-bottom: 72px;
+}
+.team .list{
+    display: flex;
+    gap: 24px;
 }
 .team .list-item{
     background-color: var(--white);
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+    border-radius: 0 0 4px 4px;
+    padding: 0px 0px 32px 0px;
+    width: 264px;
+    height: 380px;
+    text-align: center;
+}
+.team-info {
+    padding: 32px 16px;
 }
 .team .list-item .item-title{
     line-height: 1.2;
@@ -152,8 +242,9 @@ header .nav-link:focus {
     font-size: 16px;
     letter-spacing: 0.02em;
 }
+/* #endregion Team */
 
-/* portfolio */
+/* #region portfolio */
 .portfolio-title{
     color: var(--navy-blue);
     font-size: 36px;
@@ -161,11 +252,20 @@ header .nav-link:focus {
     text-align: center;
     letter-spacing: 0.02em;
     text-transform: capitalize;
+    margin-bottom: 72px;
 }
 .portfolio .item-title{
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: var(--navy-blue);
+}
+.portfolio ul.list {
+    display: flex;
+    flex-flow: wrap;
+    gap: 24px;
+}
+.portfolio-info{
+    padding: 32px 16px;
 }
 .portfolio .descr{
     line-height: 1.5;
@@ -176,8 +276,13 @@ header .nav-link:focus {
 .footer{
     background-color: var(--navy-blue);
 }
+.footer .inner-container{
+    padding: 100px 0;
+}
 .footer .logo{
     line-height: 1.17;
+    margin-bottom: 16px;
+    display: block;
 }
 .footer .logo-accent {
     color: var(--cloud);
@@ -186,4 +291,5 @@ header .nav-link:focus {
     line-height: 1.5;
     color: var(--cloud);
     letter-spacing: 0.02em;
+    width: 264px;
 }
