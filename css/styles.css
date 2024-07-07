@@ -201,6 +201,10 @@ button.btn.hero-btn {
     clip: rect(0 0 0 0);
     overflow: hidden;
 }
+ul.about-list {
+    display: flex;
+    gap: 24px; 
+}
 .about-list li {
     width: calc((100% - 72px) / 4);
 }
@@ -211,10 +215,6 @@ button.btn.hero-btn {
 .about .item .descr {
     line-height: 1.5;
     letter-spacing: 0.02em;
-}
-
-ul.about-list {
-    display: flex;
 }
 /* #endregion about */
 
@@ -245,7 +245,7 @@ ul.about-list {
     text-align: center;
 }
 .team-info {
-    padding: 32px ;
+    padding: 32px 0;
 }
 .team .list-item .item-title{
     line-height: 1.2;
