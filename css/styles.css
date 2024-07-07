@@ -111,14 +111,13 @@ header nav.nav-menu{
     display: flex;
     align-items: center
 }
-header .nav-list {
+header ul.nav-list {
     font-weight: 500;
     letter-spacing: 0.02em;
     display: flex;
     align-items: center;
     gap: 40px;
 }
-
 header .nav-link{
     color: var(--navy-blue);
     letter-spacing: 0.02em;
@@ -137,6 +136,7 @@ header .address {
 }
 header .address-list{
     display: flex;
+    gap: 40px;
 }
 header .address .address-item .link{
     line-height: 1.5;
@@ -169,6 +169,8 @@ header .address-item .link:focus{
     margin: 0 auto 48px;
 }
 button.btn.hero-btn {
+    display: block; 
+    margin: auto;
     border-radius: 4px;
     padding: 16px 32px;
     min-width: 169px;
@@ -243,12 +245,14 @@ ul.about-list {
     text-align: center;
 }
 .team-info {
-    padding: 32px 16px;
+    padding: 32px ;
 }
 .team .list-item .item-title{
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: var(--navy-blue);
+    margin-bottom: 8px;;
+
 }
 .team .list-item .descr{
     line-height: 1.5;
@@ -273,20 +277,22 @@ ul.about-list {
 .portfolio li{
     width: calc((100% - 48px) / 3);
 }
-.portfolio .item-title{
-    line-height: 1.2;
-    letter-spacing: 0.02em;
-    color: var(--navy-blue);
-}
 .portfolio ul.list {
     display: flex;
     flex-flow: wrap;
     gap: 24px;
+    row-gap: 48px;
 }
 .portfolio-info{
     padding: 32px 16px;
     border: 1px solid #e7e9fc; 
     border-top: none; 
+}
+.portfolio .item-title{
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: var(--navy-blue);
+    margin-bottom: 8px;
 }
 .portfolio .descr{
     line-height: 1.5;
@@ -299,10 +305,12 @@ ul.about-list {
     background-color: var(--navy-blue);
     padding: 100px 0;
 }
+.footer a{
+    display: inline-block;
+}
 .footer .logo{
     line-height: 1.17;
     margin-bottom: 16px;
-    display: block;
 }
 .footer .logo-accent {
     color: var(--cloud);
